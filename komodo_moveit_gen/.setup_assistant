@@ -1,0 +1,8 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: ric_description
+    relative_path: komodo/komodo_elevator.URDF
+  SRDF:
+    relative_path: config/komodo.srdf
+  CONFIG:
+    generated_timestamp: 1429204966
