@@ -25,8 +25,12 @@
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
 	args="-urdf -model komodo -param robot_description -z 0.1"/>
 
-  <!-- ros_control clam launch file -->
+  <!-- ros_control komodo launch file -->
   <include file="$(find komodo_gazebo)/launch/komodo_trajectory_control.launch" />
+
+  <!-- komodo moveit-motion planning launch file -->
+  <include file="$(find komodo_moveit_gen)/launch/moveit_planning_execution.launch" />
+
 
 </launch>
 

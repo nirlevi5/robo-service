@@ -6,6 +6,3 @@ controller_list:
       - komodo_elbow1_joint
       - komodo_elbow2_joint
       - komodo_wrist_joint
-  - name: fake_komodo_gripper_controller
-    joints:
-      - komodo_left_finger_joint

@@ -1,0 +1,8 @@
+<launch>
+
+  <include file="$(find komodo_moveit_gen)/launch/demo.launch"/>
+
+  <node name="komodo_move_group_interface_tutorial" pkg="komodo_planning" type="komodo_move_group_interface_tutorial" respawn="false" output="screen">
+  </node>
+
+</launch>
