@@ -1,5 +1,0 @@
-roslaunch komodo_gazebo komodo_empty_world_trajectory.launch
-roslaunch komodo_moveit_gen moveit_planning_execution.launch
-in rviz:
-	-> add "motion planning"
-	-> press "update" then "plan and execute"

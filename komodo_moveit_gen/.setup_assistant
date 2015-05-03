@@ -1,8 +1,0 @@
-moveit_setup_assistant_config:
-  URDF:
-    package: komodo_gazebo
-    relative_path: robots/komodo_elevator.URDF
-  SRDF:
-    relative_path: config/komodo.srdf
-  CONFIG:
-    generated_timestamp: 1429467882

@@ -13,22 +13,19 @@
   name="komodo">
 <!-- Dummy inertia link & Joint -->
   <link
-    name="dummy_link">    
+    name="komodo_root">    
 </link>
   <joint
-    name="dummy_joint"
+    name="root"
     type="fixed">
-    <origin
-      xyz="0.0 0.0 0.0"
-      rpy="0 0 0" />
     <parent
-      link="dummy_link" />
+      link="komodo_root" />
     <child
       link="komodo_base_link" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
+  </joint> 
+
 <!-- Dummy link & node -->
+
   <link
     name="komodo_base_link">
     <inertial>
@@ -1011,7 +1008,7 @@
       lower="-0.1"
       upper="1.57"
       effort="10"
-      velocity="0" />
+      velocity="1" />
   </joint>
   <link
     name="komodo_right_finger_link">

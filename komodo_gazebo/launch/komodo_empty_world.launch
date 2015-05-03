@@ -28,9 +28,9 @@
   <!-- ros_control komodo launch file -->
   <include file="$(find komodo_gazebo)/launch/komodo_trajectory_control.launch" />
 
-  <!-- komodo moveit-motion planning launch file -->
+  <!-- komodo moveit-motion planning launch file 
   <include file="$(find komodo_moveit_gen)/launch/moveit_planning_execution.launch" />
-
+-->
 
 </launch>
 
