@@ -1,3 +1,4 @@
+<!-- -*- mode: XML -*- -->
 <launch>
 
   <include file="$(find komodo_moveit_config)/launch/planning_context.launch" />
