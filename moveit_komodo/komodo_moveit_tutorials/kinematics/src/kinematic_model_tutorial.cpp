@@ -95,33 +95,33 @@ int main(int argc, char **argv)
   }
   ROS_INFO("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
 
-//  // Joint Limits
-//  // ^^^^^^^^^^^^
-//  // setJointGroupPositions() does not enforce joint limits by itself, but a call to enforceBounds() will do it.
-//  /* Set one joint in the right arm outside its joint limit */
-//  joint_values[0] = 1.57;
-//  kinematic_state->setJointGroupPositions(joint_model_group, joint_values);
-//
-//  /* Check whether any joint is outside its joint limits */
-//  ROS_INFO_STREAM("Current state is " << (kinematic_state->satisfiesBounds() ? "valid" : "not valid"));
-//
-//  /* Enforce the joint limits for this state and check again*/
-//  kinematic_state->enforceBounds();
-//  ROS_INFO_STREAM("Current state is " << (kinematic_state->satisfiesBounds() ? "valid" : "not valid"));
-//
-//  // Forward Kinematics
-//  // ^^^^^^^^^^^^^^^^^^
-//  // Now, we can compute forward kinematics for a set of random joint
-//  // values. Note that we would like to find the pose of the
-//  // "r_wrist_roll_link" which is the most distal link in the
-//  // "right_arm" of the robot.
-//  kinematic_state->setToRandomPositions(joint_model_group);
-//  const Eigen::Affine3d &end_effector_state = kinematic_state->getGlobalLinkTransform("komodo_wrist_link");
-//
-//  /* Print end-effector pose. Remember that this is in the model frame */
-//  ROS_INFO_STREAM("Translation: " << end_effector_state.translation());
-//  ROS_INFO_STREAM("Rotation: " << end_effector_state.rotation());
-//
+  // Joint Limits
+  // ^^^^^^^^^^^^
+  // setJointGroupPositions() does not enforce joint limits by itself, but a call to enforceBounds() will do it.
+  /* Set one joint in the right arm outside its joint limit */
+  joint_values[0] = 1.57;
+  kinematic_state->setJointGroupPositions(joint_model_group, joint_values);
+
+  /* Check whether any joint is outside its joint limits */
+  ROS_INFO_STREAM("Current state is " << (kinematic_state->satisfiesBounds() ? "valid" : "not valid"));
+
+  /* Enforce the joint limits for this state and check again*/
+  kinematic_state->enforceBounds();
+  ROS_INFO_STREAM("Current state is " << (kinematic_state->satisfiesBounds() ? "valid" : "not valid"));
+
+  // Forward Kinematics
+  // ^^^^^^^^^^^^^^^^^^
+  // Now, we can compute forward kinematics for a set of random joint
+  // values. Note that we would like to find the pose of the
+  // "r_wrist_roll_link" which is the most distal link in the
+  // "right_arm" of the robot.
+  kinematic_state->setToRandomPositions(joint_model_group);
+  const Eigen::Affine3d &end_effector_state = kinematic_state->getGlobalLinkTransform("komodo_wrist_link");
+
+  /* Print end-effector pose. Remember that this is in the model frame */
+  ROS_INFO_STREAM("Translation: " << end_effector_state.translation());
+  ROS_INFO_STREAM("Rotation: " << end_effector_state.rotation());
+
 //  // Inverse Kinematics
 //  // ^^^^^^^^^^^^^^^^^^
 //  // We can now solve inverse kinematics (IK) for the right arm of the

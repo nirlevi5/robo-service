@@ -1,5 +1,5 @@
 <launch>
-  <include file="$(find komodo_moveit_gen)/launch/planning_context.launch">
+  <include file="$(find komodo_moveit_config)/launch/planning_context.launch">
     <arg name="load_robot_description" value="false"/>
   </include>
 
@@ -8,6 +8,6 @@
         type="kinematic_model_tutorial"
         respawn="false" output="screen">
     <rosparam command="load"
-              file="$(find komodo_moveit_gen)/config/kinematics.yaml"/>
+              file="$(find komodo_moveit_config)/config/kinematics.yaml"/>
   </node>
 </launch>

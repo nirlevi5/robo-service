@@ -1,33 +1,32 @@
 <!--
   This is a URDF file to launch the KOMODO_elevator in GAZEBO simulator
   It was created for the Robo-Waitres project at Ben Gurion university
-  under the supervision of Prof. Ronen Brafman and Dr. Amir Shapiro in order   
-  to use the komodo in a simulated world.
+  under the supervision of Prof. Ronen Brafman and Dr. Amir Shapiro.
 
-  The code was created and maintained by:
+  The code maintained by:
   Nir Levi: nirlevi5@gmail.com
   David Levi: davidx@post.bgu.ac.il  
 -->
 <?xml version="1.0"?>
 <robot
-  name="komodo">
+  name="komodo_1">
 <!-- Dummy inertia link & Joint -->
   <link
-    name="komodo_root">    
+    name="komodo_1_root">    
 </link>
   <joint
     name="root"
     type="fixed">
     <parent
-      link="komodo_root" />
+      link="komodo_1_root" />
     <child
-      link="komodo_base_link" />
+      link="komodo_1_base_link" />
   </joint> 
 
 <!-- Dummy link & node -->
 
   <link
-    name="komodo_base_link">
+    name="komodo_1_base_link">
     <inertial>
       <origin
         xyz="-0.0202567965431546 4.50159006641306E-05 0.00729101578040162"
@@ -67,7 +66,7 @@
     </collision>
   </link>
   <link
-    name="komodo_FR_Wheel_link">
+    name="komodo_1_FR_Wheel_link">
     <inertial>
       <origin
         xyz="-0.00125662336313273 1.11355998344831E-05 1.03716608161431E-05"
@@ -109,20 +108,20 @@
     </collision>
   </link>
   <joint
-    name="komodo_FR_Wheel_joint"
+    name="komodo_1_FR_Wheel_joint"
     type="continuous">
     <origin
       xyz="0.173999999999995 -0.2009 0"
       rpy="0 2.91353065389309E-16 -1.5707963267949" />
     <parent
-      link="komodo_base_link" />
+      link="komodo_1_base_link" />
     <child
-      link="komodo_FR_Wheel_link" />
+      link="komodo_1_FR_Wheel_link" />
     <axis
       xyz="-1 0 0" />
   </joint>
   <link
-    name="komodo_FL_Wheel_link">
+    name="komodo_1_FL_Wheel_link">
     <inertial>
       <origin
         xyz="-0.00125662485896622 1.49949992671872E-05 2.59231426950774E-06"
@@ -164,20 +163,20 @@
     </collision>
   </link>
   <joint
-    name="komodo_FL_Wheel_joint"
+    name="komodo_1_FL_Wheel_joint"
     type="continuous">
     <origin
       xyz="0.173999999999995 0.2009 0"
       rpy="0 -1.52736144460753E-16 1.5707963267949" />
     <parent
-      link="komodo_base_link" />
+      link="komodo_1_base_link" />
     <child
-      link="komodo_FL_Wheel_link" />
+      link="komodo_1_FL_Wheel_link" />
     <axis
       xyz="1 0 0" />
   </joint>
   <link
-    name="komodo_RR_Wheel_link">
+    name="komodo_1_RR_Wheel_link">
     <inertial>
       <origin
         xyz="-0.00125662335525084 1.11355843264715E-05 1.03716365456246E-05"
@@ -219,20 +218,20 @@
     </collision>
   </link>
   <joint
-    name="komodo_RR_Wheel_joint"
+    name="komodo_1_RR_Wheel_joint"
     type="continuous">
     <origin
       xyz="-0.156000000000005 -0.2009 0"
       rpy="0 2.91353065389309E-16 -1.5707963267949" />
     <parent
-      link="komodo_base_link" />
+      link="komodo_1_base_link" />
     <child
-      link="komodo_RR_Wheel_link" />
+      link="komodo_1_RR_Wheel_link" />
     <axis
       xyz="-1 0 0" />
   </joint>
   <link
-    name="komodo_RL_Wheel_link">
+    name="komodo_1_RL_Wheel_link">
     <inertial>
       <origin
         xyz="-0.00125662481023878 1.51826398065158E-05 -1.03148726989222E-06"
@@ -274,20 +273,20 @@
     </collision>
   </link>
   <joint
-    name="komodo_RL_Wheel_joint"
+    name="komodo_1_RL_Wheel_joint"
     type="continuous">
     <origin
       xyz="-0.156000000000005 0.2009 0"
       rpy="0 -1.52736144460753E-16 1.5707963267949" />
     <parent
-      link="komodo_base_link" />
+      link="komodo_1_base_link" />
     <child
-      link="komodo_RL_Wheel_link" />
+      link="komodo_1_RL_Wheel_link" />
     <axis
       xyz="1 0 0" />
   </joint>
   <link
-    name="komodo_Left_URF_link">
+    name="komodo_1_Left_URF_link">
     <inertial>
       <origin
         xyz="-0.00942258060477766 -6.76888278501216E-05 0.000193183712129563"
@@ -327,20 +326,20 @@
     </collision>
   </link>
   <joint
-    name="komodo_Left_URF_joint"
+    name="komodo_1_Left_URF_joint"
     type="fixed">
     <origin
       xyz="-0.0223641326154781 0.137250000000005 0.138508176066688"
       rpy="0 -1.52736144460753E-16 1.5707963267949" />
     <parent
-      link="komodo_base_link" />
+      link="komodo_1_base_link" />
     <child
-      link="komodo_Left_URF_link" />
+      link="komodo_1_Left_URF_link" />
     <axis
       xyz="0 0 0" />
   </joint>
   <link
-    name="komodo_Rear_URF_link">
+    name="komodo_1_Rear_URF_link">
     <inertial>
       <origin
         xyz="-0.00942258060476636 -6.76888278372571E-05 0.000193183712129591"
@@ -380,20 +379,20 @@
     </collision>
   </link>
   <joint
-    name="komodo_Rear_URF_joint"
+    name="komodo_1_Rear_URF_joint"
     type="fixed">
     <origin
       xyz="-0.267499972183238 -5.07999999948743E-05 0.108"
       rpy="-2.22044604925031E-16 0 3.14159265358979" />
     <parent
-      link="komodo_base_link" />
+      link="komodo_1_base_link" />
     <child
-      link="komodo_Rear_URF_link" />
+      link="komodo_1_Rear_URF_link" />
     <axis
       xyz="0 0 0" />
   </joint>
   <link
-    name="komodo_Right_URF_link">
+    name="komodo_1_Right_URF_link">
     <inertial>
       <origin
         xyz="-0.00942258060475351 -6.76888278484597E-05 0.000193183712129535"
@@ -433,20 +432,20 @@
     </collision>
   </link>
   <joint
-    name="komodo_Right_URF_joint"
+    name="komodo_1_Right_URF_joint"
     type="fixed">
     <origin
       xyz="-0.0222625326154781 -0.137249999999995 0.138508176066688"
       rpy="0 2.91353065389309E-16 -1.5707963267949" />
     <parent
-      link="komodo_base_link" />
+      link="komodo_1_base_link" />
     <child
-      link="komodo_Right_URF_link" />
+      link="komodo_1_Right_URF_link" />
     <axis
       xyz="0 0 0" />
   </joint>
   <link
-    name="komodo_Front_Camera_link">
+    name="komodo_1_Front_Camera_link">
     <inertial>
       <origin
         xyz="3.63553471587064E-06 0.000213443852909057 -0.00979905092954425"
@@ -486,20 +485,20 @@
     </collision>
   </link>
   <joint
-    name="komodo_Frotn_Camera_joint"
+    name="komodo_1_Frotn_Camera_joint"
     type="fixed">
     <origin
       xyz="0.262250027816762 0.0875000000000051 0.1"
       rpy="-1.5707963267949 2.91353065389309E-16 -1.5707963267949" />
     <parent
-      link="komodo_base_link" />
+      link="komodo_1_base_link" />
     <child
-      link="komodo_Front_Camera_link" />
+      link="komodo_1_Front_Camera_link" />
     <axis
       xyz="0 0 0" />
   </joint>
   <link
-    name="komodo_Laser_link">
+    name="komodo_1_Laser_link">
     <inertial>
       <origin
         xyz="-5.67786090349132E-05 6.35639788812009E-05 -0.0320034700075499"
@@ -539,20 +538,20 @@
     </collision>
   </link>
   <joint
-    name="komodo_Laser_joint"
+    name="komodo_1_Laser_joint"
     type="fixed">
     <origin
       xyz="0.234263427816762 0 0.145827195177236"
       rpy="0 0 0" />
     <parent
-      link="komodo_base_link" />
+      link="komodo_1_base_link" />
     <child
-      link="komodo_Laser_link" />
+      link="komodo_1_Laser_link" />
     <axis
       xyz="0 0 0" />
   </joint>
   <link
-    name="komodo_Arm_base_link">
+    name="komodo_1_Arm_base_link">
     <inertial>
       <origin
         xyz="0.0787832367713514 1.63894955207658E-05 0.30372182598738"
@@ -592,20 +591,20 @@
     </collision>
   </link>
   <joint
-    name="komodo_Arm_base_joint"
+    name="komodo_1_Arm_base_joint"
     type="fixed">
     <origin
       xyz="-0.112249972183238 0 0.167160698455407"
       rpy="0 0 0" />
     <parent
-      link="komodo_base_link" />
+      link="komodo_1_base_link" />
     <child
-      link="komodo_Arm_base_link" />
+      link="komodo_1_Arm_base_link" />
     <axis
       xyz="0 0 0" />
   </joint>
   <link
-    name="komodo_elevator_link">
+    name="komodo_1_elevator_link">
     <inertial>
       <origin
         xyz="0.0954671716579415 1.91586249009607E-06 -0.0185743175743276"
@@ -645,15 +644,15 @@
     </collision>
   </link>
   <joint
-    name="komodo_elevator_joint"
+    name="komodo_1_elevator_joint"
     type="fixed">
     <origin
       xyz="0.101457996026178 0 0.0740000000000002"
       rpy="0 0 0" />
     <parent
-      link="komodo_Arm_base_link" />
+      link="komodo_1_Arm_base_link" />
     <child
-      link="komodo_elevator_link" />
+      link="komodo_1_elevator_link" />
     <axis
       xyz="0 0 1" />
    <limit
@@ -663,7 +662,7 @@
 	velocity="0" />
   </joint>
   <link
-    name="komodo_base_rotation_link">
+    name="komodo_1_base_rotation_link">
     <inertial>
       <origin
         xyz="-6.93889390390723E-17 1.46538271444029E-17 0.0623331826247039"
@@ -703,15 +702,15 @@
     </collision>
   </link>
   <joint
-    name="komodo_base_rotation_joint"
+    name="komodo_1_base_rotation_joint"
     type="revolute">
     <origin
       xyz="0.113 0 -0.00400000000000003"
       rpy="0 0 0" />
     <parent
-      link="komodo_elevator_link" />
+      link="komodo_1_elevator_link" />
     <child
-      link="komodo_base_rotation_link" />
+      link="komodo_1_base_rotation_link" />
     <axis
       xyz="0 0 1" />
 	 <limit
@@ -721,7 +720,7 @@
 	velocity="0" />
   </joint>
   <link
-    name="komodo_shoulder_link">
+    name="komodo_1_shoulder_link">
     <inertial>
       <origin
         xyz="-4.66247777455853E-06 -9.82289263772941E-05 0.0772888499398813"
@@ -761,15 +760,15 @@
     </collision>
   </link>
   <joint
-    name="komodo_shoulder_joint"
+    name="komodo_1_shoulder_joint"
     type="revolute">
     <origin
       xyz="0 0 0.0835"
       rpy="0 0 0" />
     <parent
-      link="komodo_base_rotation_link" />
+      link="komodo_1_base_rotation_link" />
     <child
-      link="komodo_shoulder_link" />
+      link="komodo_1_shoulder_link" />
     <axis
       xyz="0 1 0" />
    <limit
@@ -779,7 +778,7 @@
 	velocity="0" />
   </joint>
   <link
-    name="komodo_elbow1_link">
+    name="komodo_1_elbow1_link">
     <inertial>
       <origin
         xyz="3.38829306132937E-05 2.66620552362602E-06 0.0239321015118659"
@@ -819,15 +818,15 @@
     </collision>
   </link>
   <joint
-    name="komodo_elbow1_joint"
+    name="komodo_1_elbow1_joint"
     type="revolute">
     <origin
       xyz="0 -0.000251155668931501 0.266305434894181"
       rpy="0 0 0" />
     <parent
-      link="komodo_shoulder_link" />
+      link="komodo_1_shoulder_link" />
     <child
-      link="komodo_elbow1_link" />
+      link="komodo_1_elbow1_link" />
     <axis
       xyz="-1 0 0" />
    <limit
@@ -837,7 +836,7 @@
 	velocity="0" />
   </joint>
    <link
-    name="komodo_elbow2_link">
+    name="komodo_1_elbow2_link">
     <inertial>
       <origin
         xyz="0.000512284668490459 -2.29084833272284E-05 0.0885118785637893"
@@ -877,15 +876,15 @@
     </collision>
   </link>
   <joint
-    name="komodo_elbow2_joint"
+    name="komodo_1_elbow2_joint"
     type="revolute">
     <origin
       xyz="0 0 0.22399999999847"
       rpy="0 0 0" />
     <parent
-      link="komodo_elbow1_link" />
+      link="komodo_1_elbow1_link" />
     <child
-      link="komodo_elbow2_link" />
+      link="komodo_1_elbow2_link" />
     <axis
       xyz="0 1 0" />
     <limit
@@ -895,7 +894,7 @@
 	velocity="0" />
   </joint>
   <link
-    name="komodo_wrist_link">
+    name="komodo_1_wrist_link">
     <inertial>
       <origin
         xyz="0.0303673809619356 4.00707611352118E-10 0.000140374211043737"
@@ -935,15 +934,15 @@
     </collision>
   </link>
   <joint
-    name="komodo_wrist_joint"
+    name="komodo_1_wrist_joint"
     type="revolute">
     <origin
       xyz="0.0131002732116043 0 0.244749985376465"
       rpy="-7.54547010806299E-10 -1.57079521049999 7.54547010806769E-10" />
     <parent
-      link="komodo_elbow2_link" />
+      link="komodo_1_elbow2_link" />
     <child
-      link="komodo_wrist_link" />
+      link="komodo_1_wrist_link" />
     <axis
       xyz="1 0 0" />
    <limit
@@ -953,7 +952,7 @@
 	velocity="0" />
   </joint>
   <link
-    name="komodo_left_finger_link">
+    name="komodo_1_left_finger_link">
     <inertial>
       <origin
         xyz="3.72403910764429E-08 0.0148725895621533 0.0333609018907974"
@@ -993,25 +992,25 @@
     </collision>
   </link>
   <joint
-    name="komodo_left_finger_joint"
+    name="komodo_1_left_finger_joint"
     type="revolute">
     <origin
       xyz="0.0422500000000001 0.0209999999999993 0"
       rpy="-1.68486099328966E-31 1.57079521049999 -8.42292155533488E-16" />
     <parent
-      link="komodo_wrist_link" />
+      link="komodo_1_wrist_link" />
     <child
-      link="komodo_left_finger_link" />
+      link="komodo_1_left_finger_link" />
     <axis
       xyz="-1 0 0" />
     <limit
       lower="-0.1"
       upper="1.57"
       effort="10"
-      velocity="1" />
+      velocity="0" />
   </joint>
   <link
-    name="komodo_right_finger_link">
+    name="komodo_1_right_finger_link">
     <inertial>
       <origin
         xyz="3.72403914095099E-08 -0.0148725895621533 0.0333609018907972"
@@ -1051,15 +1050,15 @@
     </collision>
   </link>
   <joint
-    name="komodo_right_finger_joint"
+    name="komodo_1_right_finger_joint"
     type="revolute">
     <origin
       xyz="0.0422499999999997 -0.0210000000000011 0"
       rpy="-1.68486099328966E-31 1.57079521049999 -8.42292155533488E-16" />
     <parent
-      link="komodo_wrist_link" />
+      link="komodo_1_wrist_link" />
     <child
-      link="komodo_right_finger_link" />
+      link="komodo_1_right_finger_link" />
     <axis
       xyz="-1 0 0" />
     <limit
@@ -1069,7 +1068,7 @@
       velocity="0" />
   </joint>
   <link
-    name="komodo_Creative_Camera_link">
+    name="komodo_1_Creative_Camera_link">
     <inertial>
       <origin
         xyz="0.000246466472824558 6.40214461760665E-06 -3.77569804070194E-05"
@@ -1109,20 +1108,20 @@
     </collision>
   </link>
   <joint
-    name="komodo_Creative_Camera_joint"
+    name="komodo_1_Creative_Camera_joint"
     type="fixed">
     <origin
       xyz="0.0260250000000002 0 0.0520000000000001"
       rpy="-1.41059322098675E-37 0 -6.20247191139794E-16" />
     <parent
-      link="komodo_wrist_link" />
+      link="komodo_1_wrist_link" />
     <child
-      link="komodo_Creative_Camera_link" />
+      link="komodo_1_Creative_Camera_link" />
     <axis
       xyz="0 0 0" />
   </joint>
   <link
-    name="komodo_Asus_Camera_link">
+    name="komodo_1_Asus_Camera_link">
     <inertial>
       <origin
         xyz="-0.0186787128878999 -0.000250455424978622 -0.00418879037489228"
@@ -1162,20 +1161,20 @@
     </collision>
   </link>
   <joint
-    name="komodo_Asus_Camera_joint"
+    name="komodo_1_Asus_Camera_joint"
     type="fixed">
     <origin
       xyz="0.143457996026181 0 0.696234376944339"
       rpy="0 0 0" />
     <parent
-      link="komodo_Arm_base_link" />
+      link="komodo_1_Arm_base_link" />
     <child
-      link="komodo_Asus_Camera_link" />
+      link="komodo_1_Asus_Camera_link" />
     <axis
       xyz="0 0 0" />
   </joint>
   <link
-    name="komodo_Rear_Camera_link">
+    name="komodo_1_Rear_Camera_link">
     <inertial>
       <origin
         xyz="3.63553471786722E-06 0.000213443852905448 -0.00979905092954501"
@@ -1215,20 +1214,20 @@
     </collision>
   </link>
   <joint
-    name="komodo_Rear_Camera_joint"
+    name="komodo_1_Rear_Camera_joint"
     type="fixed">
     <origin
       xyz="0.0329579960261737 0 0.354500000000001"
       rpy="-1.5707963267949 2.92163953848738E-15 1.5707963267949" />
     <parent
-      link="komodo_Arm_base_link" />
+      link="komodo_1_Arm_base_link" />
     <child
-      link="komodo_Rear_Camera_link" />
+      link="komodo_1_Rear_Camera_link" />
     <axis
       xyz="0 0 0" />
   </joint>
   <link
-    name="komodo_Top_Camera_link">
+    name="komodo_1_Top_Camera_link">
     <inertial>
       <origin
         xyz="4.37351127445876E-06 0.000213430006923504 -0.00979905092954436"
@@ -1268,20 +1267,20 @@
     </collision>
   </link>
   <joint
-    name="komodo_Top_Camera_joint"
+    name="komodo_1_Top_Camera_joint"
     type="fixed">
     <origin
       xyz="0.0622079960261761 0.0152829991418538 0.660000000000001"
       rpy="5.38354147863953E-15 1.55701850396119E-12 -1.56733874423455" />
     <parent
-      link="komodo_Arm_base_link" />
+      link="komodo_1_Arm_base_link" />
     <child
-      link="komodo_Top_Camera_link" />
+      link="komodo_1_Top_Camera_link" />
     <axis
       xyz="0 0 0" />
   </joint>
   <link
-    name="komodo_sensors_unit_link">
+    name="komodo_1_sensors_unit_link">
     <inertial>
       <origin
         xyz="0.0489076645367545 -0.000360724081928495 0.0483981408156988"
@@ -1321,31 +1320,33 @@
     </collision>
   </link>
   <joint
-    name="komodo_sensors_unit_joint"
+    name="komodo_1_sensors_unit_joint"
     type="fixed">
     <origin
       xyz="-0.00199997218323816 0 0.0835000000000002"
       rpy="0 0 0" />
     <parent
-      link="komodo_base_link" />
+      link="komodo_1_base_link" />
     <child
-      link="komodo_sensors_unit_link" />
+      link="komodo_1_sensors_unit_link" />
     <axis
       xyz="0 0 0" />
   </joint>
 
+<!-- --------------------------------------------------------------------- GAZEBO TAGS -->
+
   <!-- ros_control plugin -->
-<gazebo> 
-<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-<robotNamespace>/komodo</robotNamespace> 
-</plugin> 
-</gazebo>
+  <gazebo> 
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/komodo_1</robotNamespace> 
+    </plugin> 
+  </gazebo>
 
  <!-- Transmissions for ROS Control -->
 
   <transmission name="tran1">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="komodo_FR_Wheel_joint">
+    <joint name="komodo_1_FR_Wheel_joint">
       <hardwareInterface>EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="motor1">
@@ -1356,7 +1357,7 @@
 
   <transmission name="tran2">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="komodo_FL_Wheel_joint">
+    <joint name="komodo_1_FL_Wheel_joint">
       <hardwareInterface>EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="motor2">
@@ -1367,7 +1368,7 @@
 
   <transmission name="tran3">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="komodo_RR_Wheel_joint">
+    <joint name="komodo_1_RR_Wheel_joint">
       <hardwareInterface>EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="motor3">
@@ -1378,7 +1379,7 @@
 
   <transmission name="tran4">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="komodo_RL_Wheel_joint">
+    <joint name="komodo_1_RL_Wheel_joint">
       <hardwareInterface>EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="motor4">
@@ -1389,7 +1390,7 @@
 
   <transmission name="tran5">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="komodo_base_rotation_joint">
+    <joint name="komodo_1_base_rotation_joint">
       <hardwareInterface>EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="motor5">
@@ -1400,7 +1401,7 @@
 
   <transmission name="tran6">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="komodo_shoulder_joint">
+    <joint name="komodo_1_shoulder_joint">
       <hardwareInterface>EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="motor6">
@@ -1411,7 +1412,7 @@
 
   <transmission name="tran7">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="komodo_elbow1_joint">
+    <joint name="komodo_1_elbow1_joint">
       <hardwareInterface>EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="motor7">
@@ -1422,7 +1423,7 @@
 
   <transmission name="tran8">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="komodo_elbow2_joint">
+    <joint name="komodo_1_elbow2_joint">
       <hardwareInterface>EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="motor8">
@@ -1433,7 +1434,7 @@
 
   <transmission name="tran9">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="komodo_wrist_joint">
+    <joint name="komodo_1_wrist_joint">
       <hardwareInterface>EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="motor9">
@@ -1444,7 +1445,7 @@
 
   <transmission name="tran10">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="komodo_left_finger_joint">
+    <joint name="komodo_1_left_finger_joint">
       <hardwareInterface>EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="motor10">
@@ -1455,7 +1456,7 @@
 
   <transmission name="tran11">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="komodo_right_finger_joint">
+    <joint name="komodo_1_right_finger_joint">
       <hardwareInterface>EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="motor11">
@@ -1463,99 +1464,112 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-<!--
-  <transmission name="tran12">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="komodo_elevator_joint">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor12">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
--->
-<!-- New -->
 
-<gazebo reference="komodo_base_rotation_link">
+
+  <gazebo reference="komodo_1_base_rotation_link">
     <mu1>1</mu1>
     <mu2>1</mu2>
     <selfCollide>true</selfCollide>
-   <material>Gazebo/Grey</material>
-</gazebo>
+    <material>Gazebo/Grey</material>
+  </gazebo>
 
-<gazebo reference="komodo_shoulder_link">
+  <gazebo reference="komodo_1_shoulder_link">
     <mu1>1</mu1>
     <mu2>1</mu2>
     <selfCollide>true</selfCollide>
-   <material>Gazebo/Grey</material>
-</gazebo>
+    <material>Gazebo/Grey</material>
+  </gazebo>
 
-<gazebo reference="komodo_elbow1_link">
+  <gazebo reference="komodo_1_elbow1_link">
     <mu1>1</mu1>
     <mu2>1</mu2>
     <selfCollide>true</selfCollide>
-   <material>Gazebo/Grey</material>
-</gazebo>
+    <material>Gazebo/Grey</material>
+  </gazebo>
 
-<gazebo reference="komodo_elbow2_link">
+  <gazebo reference="komodo_1_elbow2_link">
     <mu1>1</mu1>
     <mu2>1</mu2>
     <selfCollide>true</selfCollide>
-   <material>Gazebo/Grey</material>
-</gazebo>
+    <material>Gazebo/Grey</material>
+  </gazebo>
 
-<gazebo reference="komodo_wrist_link">
+  <gazebo reference="komodo_1_wrist_link">
     <mu1>1</mu1>
     <mu2>1</mu2>
     <selfCollide>true</selfCollide>
-</gazebo>
+  </gazebo>
 
-<gazebo reference="komodo_left_finger_link">
+  <gazebo reference="komodo_1_left_finger_link">
     <mu1>1</mu1>
     <mu2>1</mu2>
     <selfCollide>true</selfCollide>
-</gazebo>
+  </gazebo>
 
-<gazebo reference="komodo_right_finger_link">
+  <gazebo reference="komodo_1_right_finger_link">
     <mu1>1</mu1>
     <mu2>1</mu2>
     <selfCollide>true</selfCollide>
-</gazebo>
+  </gazebo>
 
-  <gazebo reference="komodo_base_link">
+  <gazebo reference="komodo_1_base_link">
     <material>Gazebo/Grey</material>
     <mu1>1</mu1>
     <mu2>1</mu2>
     <selfCollide>true</selfCollide>
   </gazebo>
-<gazebo reference="komodo_FR_Wheel_link">
+  
+  <gazebo reference="komodo_1_FR_Wheel_link">
     <mu1>1</mu1>
     <mu2>1</mu2>
     <selfCollide>true</selfCollide>
     <material>Gazebo/Grey</material>
-</gazebo>
-<gazebo reference="komodo_FL_Wheel_link">
-    <mu1>1</mu1>
-    <mu2>1</mu2>
-    <selfCollide>true</selfCollide>
-    <material>Gazebo/Grey</material>
-</gazebo>
-<gazebo reference="komodo_RR_Wheel_link">
-    <mu1>1</mu1>
-    <mu2>1</mu2>
-    <selfCollide>true</selfCollide>
-    <material>Gazebo/Grey</material>
-</gazebo>
-<gazebo reference="komodo_RL_Wheel_link">
-    <mu1>1</mu1>
-    <mu2>1</mu2>
-    <selfCollide>true</selfCollide>
-    <material>Gazebo/Grey</material>
-</gazebo>
+  </gazebo>
 
-<!-- arm camera -->
-  <gazebo reference="Arm_Camera_link">
+  <gazebo reference="komodo_1_FL_Wheel_link">
+    <mu1>1</mu1>
+    <mu2>1</mu2>
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <gazebo reference="komodo_1_RR_Wheel_link">
+    <mu1>1</mu1>
+    <mu2>1</mu2>
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <gazebo reference="komodo_1_RL_Wheel_link">
+    <mu1>1</mu1>
+    <mu2>1</mu2>
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+<!-- skid drive -->
+  <gazebo>
+    <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+      <updateRate>100.0</updateRate>
+      <robotNamespace>/komodo_1</robotNamespace>
+      <leftFrontJoint>komodo_1_FL_Wheel_joint</leftFrontJoint>
+      <rightFrontJoint>komodo_1_FR_Wheel_joint</rightFrontJoint>
+      <leftRearJoint>komodo_1_RL_Wheel_joint</leftRearJoint>
+      <rightRearJoint>komodo_1_RR_Wheel_joint</rightRearJoint>
+      <wheelSeparation>0.4</wheelSeparation>
+      <wheelDiameter>0.25</wheelDiameter>
+      <robotBaseFrame>komodo_1_base_link</robotBaseFrame>
+      <torque>20</torque>
+      <topicName>/komodo_1/cmd_vel</topicName>
+      <commandTopic>/komodo_1/cmd_vel</commandTopic>
+      <odometryTopic>/komodo_1/odom</odometryTopic>
+      <odometryFrame>/komodo_1/odom</odometryFrame>
+      <broadcastTF>true</broadcastTF>
+    </plugin>
+  </gazebo>
+
+<!-- arm camera 
+  <gazebo reference="komodo_1_Creative_Camera_link">
     <sensor type="camera" name="camera1">
       <visualize>false</visualize>
       <update_rate>30.0</update_rate>
@@ -1573,10 +1587,9 @@
       </camera>
       <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
         <alwaysOn>true</alwaysOn>
-        <robotNamespace>komodo</robotNamespace>
         <cameraName>arm_camera</cameraName>
-        <imageTopicName>arm_camera/image_raw</imageTopicName>
-        <cameraInfoTopicName>arm_camera/camera_info</cameraInfoTopicName>
+        <imageTopicName>/komodo_1/arm_camera/image_raw</imageTopicName>
+        <cameraInfoTopicName>/komodo_1/arm_camera/camera_info</cameraInfoTopicName>
         <frameName>Arm_Camera_link</frameName>
         <hackBaseline>0.07</hackBaseline>
         <distortionK1>0.0</distortionK1>
@@ -1587,84 +1600,47 @@
       </plugin>
     </sensor>
   </gazebo>
-
-<!-- front camera -->
-  <gazebo reference="Front_Camera_link">
-    <sensor type="camera" name="camera2">
-      <visualize>false</visualize>
-      <update_rate>30.0</update_rate>
-      <camera name="Front_Camera">
+-->
+<!-- Asus Depth Camera  
+  <gazebo reference="komodo_1_Asus_Camera_link">
+    <sensor type="depth" name="Asus_Camera_link">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>20</update_rate>
+      <camera>
         <horizontal_fov>2.0</horizontal_fov>
-        <image>
-          <width>1800</width>
-          <height>1800</height>
-          <format>R8G8B8</format>
-        </image>
-        <clip>
-          <near>0.02</near>
-          <far>9</far>
-        </clip>
+	<image>
+	  <format>R8G8B8</format>
+	  <width>640</width>
+	  <height>480</height>
+	</image>
+	<clip>
+	  <near>0.5</near>
+	  <far>9</far>
+	</clip>
       </camera>
-      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
-        <alwaysOn>true</alwaysOn>
-        <robotNamespace>komodo</robotNamespace>
-        <cameraName>Front_Camera</cameraName>
-        <imageTopicName>Front_Camera/image_raw</imageTopicName>
-        <cameraInfoTopicName>Front_Camera/camera_info</cameraInfoTopicName>
-        <frameName>Front_Camera_link</frameName>
-        <hackBaseline>0.07</hackBaseline>
-        <distortionK1>0.0</distortionK1>
-        <distortionK2>0.0</distortionK2>
-        <distortionK3>0.0</distortionK3>
-        <distortionT1>0.0</distortionT1>
-        <distortionT2>0.0</distortionT2>
-      </plugin>
-    </sensor>
-  </gazebo>
-
-
-<!-- Asus camera  - Gazebo -->
-
-<gazebo reference="Asus_Camera_link">
-	<sensor type="depth" name="Asus_Camera_link">
-	  <pose>0 0 0 0 0 0</pose>
-	  <visualize>true</visualize>
-          <update_rate>20</update_rate>
-	 	<camera>
-		<horizontal_fov>2.0</horizontal_fov>
-			<image>
-			<format>R8G8B8</format>
-			<width>640</width>
-			<height>480</height>
-			</image>
-		<clip>
-		<near>0.5</near>
-		<far>9</far>
-		</clip>
-		</camera>
-	<plugin name="Asus_Camera_link_camera_controller" filename="libgazebo_ros_openni_kinect.so">
+      <plugin name="Asus_Camera_link_camera_controller" filename="libgazebo_ros_openni_kinect.so">
 	<alwaysOn>true</alwaysOn>
 	<updateRate>20</updateRate>
-	<cameraName>komodo_Asus_Camera</cameraName>
-	<!--robotNamespace>/komodo</robotNamespace--> 
-	<imageTopicName>/komodo/komodo_Asus_Camera/rgb/image_raw</imageTopicName>
-	<cameraInfoTopicName>/komodo/komodo_Asus_Camera/rgb/camera_info</cameraInfoTopicName>
-	<depthImageTopicName>/komodo/komodo_Asus_Camera/depth/image_raw</depthImageTopicName>
-	<depthImageCameraInfoTopicName>/komodo/komodo_Asus_Camera/depth/camera_info</depthImageCameraInfoTopicName>
-	<pointCloudTopicName>/komodo/komodo_Asus_Camera/depth/points</pointCloudTopicName>
+	<cameraName>komodo_1_Asus_Camera</cameraName>
+	<imageTopicName>/komodo_1/komodo_1_Asus_Camera/rgb/image_raw</imageTopicName>
+	<cameraInfoTopicName>/komodo_1/komodo_1_Asus_Camera/rgb/camera_info</cameraInfoTopicName>
+	<depthImageTopicName>/komodo_1/komodo_1_Asus_Camera/depth/image_raw</depthImageTopicName>
+	<depthImageCameraInfoTopicName>/komodo_1/komodo_1_Asus_Camera/depth/camera_info</depthImageCameraInfoTopicName>
+	<pointCloudTopicName>/komodo_1/komodo_1_Asus_Camera/depth/points</pointCloudTopicName>
 	<pointCloudCutoff>0.4</pointCloudCutoff>
-	<frameName>/Asus_Camera_link</frameName> 
+	<frameName>/komodo_1_Asus_Camera_link</frameName> 
 	<distortion_k1>0.0</distortion_k1>
 	<distortion_k2>0.0</distortion_k2>
 	<distortion_k3>0.0</distortion_k3>
 	<distortion_t1>0.0</distortion_t1>
 	<distortion_t2>0.0</distortion_t2>
-	</plugin>
+      </plugin>
     </sensor>
-</gazebo>
-  
-  <!-- hokuyo -->
-  <gazebo reference="Laser_link">
+  </gazebo>
+-->
+<!-- Laser Scan - hokuyo 
+  <gazebo reference="komodo_1_Laser_link">
     <sensor type="ray" name="head_hokuyo_sensor">
       <pose>0 0 0 0 0 0</pose>
       <visualize>false</visualize>
@@ -1685,177 +1661,15 @@
         </range>
         <noise>
           <type>gaussian</type>
-          <!-- Noise parameters based on published spec for Hokuyo laser
-               achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
-               stddev of 0.01m will put 99.7% of samples within 0.03m of the true
-               reading. -->
           <mean>0.0</mean>
           <stddev>0.01</stddev>
         </noise>
       </ray>
       <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
-        <topicName>/komodo/laser/scan</topicName>
-        <frameName>Laser_link</frameName>
+        <topicName>/komodo_1/laser/scan</topicName>
+        <frameName>komodo_1_Laser_link</frameName>
       </plugin>
     </sensor>
   </gazebo>
-
-<!-- SOnar Right URF -->
-<!-- name = komodo_Right_URF
-     update rate = 20.0 -->
- 
-   <gazebo reference="Right_URF_link">
-      <sensor type="ray" name="Right_URF">
-        <pose>0 0 0 0 0 0</pose>
-        <visualize>false</visualize>
-        <ray>
-          <scan>
-            <horizontal>
-              <samples>10</samples>
-              <resolution>1</resolution>
-              <min_angle>-0.5</min_angle>
-              <max_angle> 0.5</max_angle>
-            </horizontal>
-            <vertical>
-              <samples>10</samples>
-              <resolution>1</resolution>
-              <min_angle>-0.2</min_angle>
-              <max_angle> 0.2</max_angle>
-            </vertical>
-          </scan>
-          <range>
-            <min>0.1</min>
-            <max>1.5</max>
-            <resolution>0.01</resolution>
-          </range>
-        </ray>
-        <plugin name="gazebo_ros_Right_URF_controller" filename="libhector_gazebo_ros_sonar.so">
-          <!--gaussianNoise>0.005</gaussianNoise-->
-	  <robotNamespace>/komodo</robotNamespace>
-          <topicName>Rangers/Right_URF</topicName>
-          <frameId>/komodo/Right_URF_link</frameId>
-        </plugin>
-	  <always_on>true</always_on>
-	  <update_rate>20.0</update_rate>
-      </sensor>
-    </gazebo>
-
-<!-- SOnar Left URF -->
-<!-- name = komodo_Left_URF
-     update rate = 20.0 -->
-
-   <gazebo reference="Left_URF_link">
-      <sensor type="ray" name="Left_URF">
-        <always_on>true</always_on>
-        <update_rate>20.0</update_rate>
-        <pose>0 0 0 0 0 0</pose>
-        <visualize>false</visualize>
-        <ray>
-          <scan>
-            <horizontal>
-              <samples>10</samples>
-              <resolution>1</resolution>
-              <min_angle>-0.5</min_angle>
-              <max_angle> 0.5</max_angle>
-            </horizontal>
-            <vertical>
-              <samples>10</samples>
-              <resolution>1</resolution>
-              <min_angle>-0.2</min_angle>
-              <max_angle> 0.2</max_angle>
-            </vertical>
-          </scan>
-          <range>
-            <min>0.1</min>
-            <max>1.5</max>
-            <resolution>0.01</resolution>
-          </range>
-        </ray>
-
-        <plugin name="gazebo_ros_Left_URF_controller" filename="libhector_gazebo_ros_sonar.so">
-          <!--gaussianNoise>0.005</gaussianNoise-->
-	  <robotNamespace>/komodo</robotNamespace>
-          <topicName>Rangers/Left_URF</topicName>
-          <frameId>/komodo/Left_URF_link</frameId>
-        </plugin>
-      </sensor>
-    </gazebo>
-
-<!--komodo_Rear_URF-->
-
-   <gazebo reference="Rear_URF_link">
-      <sensor type="ray" name="Rear_URF">
-        <always_on>true</always_on>
-        <update_rate>20.0</update_rate>
-        <pose>0 0 0 0 0 0</pose>
-        <visualize>false</visualize>
-        <ray>
-          <scan>
-            <horizontal>
-              <samples>10</samples>
-              <resolution>1</resolution>
-              <min_angle>-0.5</min_angle>
-              <max_angle> 0.5</max_angle>
-            </horizontal>
-            <vertical>
-              <samples>10</samples>
-              <resolution>1</resolution>
-              <min_angle>-0.2</min_angle>
-              <max_angle> 0.2</max_angle>
-            </vertical>
-          </scan>
-          <range>
-            <min>0.1</min>
-            <max>1.5</max>
-            <resolution>0.01</resolution>
-          </range>
-        </ray>
-        <plugin name="gazebo_ros_Rear_URF_controller" filename="libhector_gazebo_ros_sonar.so">
-          <!--gaussianNoise>0.005</gaussianNoise-->
-	  <robotNamespace>/komodo</robotNamespace>
-          <topicName>Rangers/Rear_URF</topicName>
-          <frameId>/komodo/Rear_URF_link</frameId>
-        </plugin>
-      </sensor>
-    </gazebo>
-
-<!-- IMU 
-  <gazebo>
-    <plugin name="imu_sim" filename="libhector_gazebo_ros_imu.so">
-      <updateRate>100.0</updateRate>
-      <bodyName>dummy_link</bodyName>
-      <topicName>komodo/imu_pub</topicName>
-      <rpyOffsets>0 0 0</rpyOffsets> 
-      <gaussianNoise>0</gaussianNoise>  
-      <accelDrift>0.5 0.5 0.5</accelDrift>
-      <accelGaussianNoise>0.35 0.35 0.3</accelGaussianNoise>
-      <rateDrift>0.1 0.1 0.1</rateDrift>
-      <rateGaussianNoise>0.05 0.05 0.015</rateGaussianNoise>
-    </plugin>
-</gazebo>
 -->
-
-<!-- Diff drive -->
-<gazebo>
-  <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
-    <updateRate>100.0</updateRate>
-    <robotNamespace>/komodo</robotNamespace>
-    <leftFrontJoint>komodo_FL_Wheel_joint</leftFrontJoint>
-    <rightFrontJoint>komodo_FR_Wheel_joint</rightFrontJoint>
-    <leftRearJoint>komodo_RL_Wheel_joint</leftRearJoint>
-    <rightRearJoint>komodo_RR_Wheel_joint</rightRearJoint>
-    <wheelSeparation>0.4</wheelSeparation>
-    <wheelDiameter>0.25</wheelDiameter>
-    <robotBaseFrame>komodo_base_link</robotBaseFrame>
-    <torque>20</torque>
-    <topicName>cmd_vel</topicName>
-    <commandTopic>cmd_vel</commandTopic>
-    <odometryTopic>odom</odometryTopic>
-    <odometryFrame>odom</odometryFrame>
-    <broadcastTF>true</broadcastTF>
-  </plugin>
-</gazebo>
-
-
-
 </robot>
