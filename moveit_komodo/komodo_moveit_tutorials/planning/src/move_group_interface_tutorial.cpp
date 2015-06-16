@@ -162,7 +162,7 @@ int main(int argc, char **argv)
   // First define the path constraint.
   moveit_msgs::OrientationConstraint ocm;  
   ocm.link_name = "komodo_wrist_link";
-  ocm.header.frame_id = "base_link";
+  ocm.header.frame_id = "komodo_base_link";
   ocm.orientation.w = 1.0;
   ocm.absolute_x_axis_tolerance = 0.1;
   ocm.absolute_y_axis_tolerance = 0.1;

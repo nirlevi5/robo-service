@@ -65,7 +65,7 @@ int main(int argc, char **argv)
   /* Define the object message */
   moveit_msgs::CollisionObject object;
   /* The header must contain a valid TF frame */
-  object.header.frame_id = "r_wrist_roll_link";
+  object.header.frame_id = "komodo_wrist_link";
   /* The id of the object */
   object.id = "box";
 
@@ -107,7 +107,7 @@ int main(int argc, char **argv)
   /* Get a shared pointer to the model and construct a state */
   robot_model::RobotModelPtr kinematic_model = robot_model_loader.getModel();
   robot_state::RobotState current_state(kinematic_model);
-  current_state.getJointStateGroup("right_arm")->setToRandomValues();
+  current_state.getJointStateGroup("komodo_arm")->setToRandomValues();
 
   /* Construct a robot state message */
   moveit_msgs::RobotState robot_state;
@@ -117,7 +117,7 @@ int main(int argc, char **argv)
   moveit_msgs::GetStateValidity::Request get_state_validity_request;
   moveit_msgs::GetStateValidity::Response get_state_validity_response;
   get_state_validity_request.robot_state = robot_state;
-  get_state_validity_request.group_name = "right_arm";
+  get_state_validity_request.group_name = "komodo_arm";
 
   /* Service client for checking state validity */
   ros::ServiceClient service_client =  node_handle.serviceClient<moveit_msgs::GetStateValidity>("/check_state_validity");
@@ -140,7 +140,7 @@ int main(int argc, char **argv)
     display_publisher.publish(display_state);
 
     /* Generate a new state and put it into the request */
-    current_state.getJointStateGroup("right_arm")->setToRandomValues();
+    current_state.getJointStateGroup("komodo_arm")->setToRandomValues();
     robot_state::robotStateToRobotStateMsg(current_state, robot_state);
     get_state_validity_request.robot_state = robot_state;
     sleep_time.sleep();

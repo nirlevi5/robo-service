@@ -91,10 +91,10 @@ int main(int argc, char **argv)
   planning_interface::MotionPlanRequest req;
   planning_interface::MotionPlanResponse res;
   geometry_msgs::PoseStamped pose;
-  pose.header.frame_id = "torso_lift_link";
+  pose.header.frame_id = "komodo_base_link";
   pose.pose.position.x = 0.75;
   pose.pose.position.y = 0.0;
-  pose.pose.position.z = 0.0;
+  pose.pose.position.z = 0.5;
   pose.pose.orientation.w = 1.0;
 
   // A tolerance of 0.01 m is specified in position
@@ -108,8 +108,8 @@ int main(int argc, char **argv)
   // package.
   //
   // .. _kinematic_constraints: http://docs.ros.org/api/moveit_core/html/namespacekinematic__constraints.html#a88becba14be9ced36fefc7980271e132
-  req.group_name = "right_arm";
-  moveit_msgs::Constraints pose_goal = kinematic_constraints::constructGoalConstraints("r_wrist_roll_link", pose, tolerance_pose, tolerance_angle);
+  req.group_name = "komodo_arm";
+  moveit_msgs::Constraints pose_goal = kinematic_constraints::constructGoalConstraints("komodo_wrist_link", pose, tolerance_pose, tolerance_angle);
   req.goal_constraints.push_back(pose_goal);
 
   // Now, call the pipeline and check whether planning was successful.
