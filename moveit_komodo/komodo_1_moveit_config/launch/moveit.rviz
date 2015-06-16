@@ -667,7 +667,7 @@ Visualization Manager:
       Name: Current View
       Near Clip Distance: 0.01
       Pitch: 0.509797
-      Target Frame: /komodo_1_root
+      Target Frame: /komodo_1_base_link
       Value: XYOrbit (rviz)
       Yaw: 5.65995
     Saved: ~
