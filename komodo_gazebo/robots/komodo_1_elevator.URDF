@@ -8,23 +8,8 @@
   David Levi: davidx@post.bgu.ac.il  
 -->
 <?xml version="1.0"?>
-<robot
-  name="komodo_1">
-<!-- Dummy inertia link & Joint -->
-  <link
-    name="komodo_1_root">    
-</link>
-  <joint
-    name="root"
-    type="fixed">
-    <parent
-      link="komodo_1_root" />
-    <child
-      link="komodo_1_base_link" />
-  </joint> 
-
-<!-- Dummy link & node -->
-
+<robot 
+  name="komodo_1_ric_description">
   <link
     name="komodo_1_base_link">
     <inertial>
