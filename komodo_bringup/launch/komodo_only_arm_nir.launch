@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<launch>
+  
+  <arg name="id" default='1' />
+  <arg name="have_elevator"  default="False" />
+  <arg name="have_pan_tilt"  default="False" />
+  
+  <param name="robot_description" command="cat $(find komodo_gazebo)/robots/komodo_1_elevator.URDF" />
+
+  <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher" args="0 0 0 0 0 0 map komodo_1_odom 20" /> 
+  
+  
+  <group ns="komodo_1">
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" /> 
+    
+    <param name="have_elevator" type="bool" value="$(arg have_elevator)" />
+    <param name="have_pan_tilt" type="bool" value="$(arg have_pan_tilt)" />
+    
+    
+    <include file="$(find ric_robot)/launch/komodo_arm.launch">
+      <arg name="have_elevator" value="$(arg have_elevator)" />
+    </include> 
+    
+    
+  </group>
+
+</launch>
+
+

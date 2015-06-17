@@ -21,6 +21,6 @@ catkin_package(
 
 include_directories(include ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS} ${SDFormat_INCLUDE_DIRS})
 
-include_directories(include ${catkin_INCLUDE_DIRS})
-add_executable(komodo_test_trajectory src/komodo_test_trajectory.cpp)
-target_link_libraries(komodo_test_trajectory ${catkin_LIBRARIES})
+#include_directories(include ${catkin_INCLUDE_DIRS})
+#add_executable(komodo_test_trajectory src/komodo_test_trajectory.cpp)
+#target_link_libraries(komodo_test_trajectory ${catkin_LIBRARIES})

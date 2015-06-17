@@ -48,7 +48,7 @@ namespace komodo_test
 
 static const double MAX_JOINT_VALUE = M_PI; // continuous
 static const double MIN_JOINT_VALUE = -M_PI; // continuous
-static const double SEC_PER_TRAJ_POINT = 5.0; // time between points
+static const double SEC_PER_TRAJ_POINT = 2.0; // time between points
 static const std::size_t TRAJ_POINTS = 10; // number of points to generate
 
 class TestTrajectory
@@ -63,7 +63,7 @@ public:
     : verbose_(verbose)
   {
     ros::NodeHandle nh_private("~");
-    std::string action_topic = "/komodo_1/komodo_arm_trajectory_controller/follow_joint_trajectory";
+    std::string action_topic = "/komodo/komodo_arm_trajectory_controller/follow_joint_trajectory";
 //    nh_private.getParam("action_topic", action_topic);
     if (action_topic.empty())
     {
@@ -114,41 +114,46 @@ public:
    */
   trajectory_msgs::JointTrajectory createTrajectory()
   {
-    std::vector<std::string> joint_names;// = {"komodo_base_rotation_joint","komodo_shoulder_joint","komodo_elbow1_joint","komodo_elbow2_joint","komodo_wrist_joint"};
-    joint_names.push_back("komodo_1_base_rotation_joint");
-    joint_names.push_back("komodo_1_shoulder_joint");
-    joint_names.push_back("komodo_1_elbow1_joint");
-    joint_names.push_back("komodo_1_elbow2_joint");
-    joint_names.push_back("komodo_1_wrist_joint");
-
     // Get joint names
-//    nh_.getParam("komodo_arm_trajectory_controller/joints", joint_names);
+ //   nh_.getParam("komodo_1/komodo_arm_trajectory_controller/joints", joint_names);
 //    joint_names = {"aaa","bbb"};
+	std::vector<std::string> joint_names;
+    joint_names.push_back("komodo_base_rotation_joint");
+    joint_names.push_back("komodo_shoulder_joint");
+    joint_names.push_back("komodo_elbow1_joint");
+    joint_names.push_back("komodo_elbow2_joint");
+    joint_names.push_back("komodo_wrist_joint");
     if (joint_names.size() == 0)
     {
-      ROS_FATAL_STREAM_NAMED("init","Not joints found on parameter server for controller, did you load the proper yaml file?");
+      ROS_FATAL_STREAM_NAMED("init","No joints found on parameter server for controller, did you load the proper yaml file?");
     }
 
     // Create header
-	// Create header
-	trajectory_msgs::JointTrajectory trajectory;
-	trajectory.header.stamp = ros::Time::now();
-	trajectory.joint_names = joint_names;
+    trajectory_msgs::JointTrajectory trajectory;
+    trajectory.header.stamp = ros::Time::now();
+    trajectory.joint_names = joint_names;
 
-
-	trajectory.points.resize(1);
-	//point 1
-	trajectory.points[0].positions.resize(joint_names.size());
-	trajectory.points[0].positions[0] = 0.0; // meter;
-	trajectory.points[0].positions[1] = 0.0; // rad;
-	trajectory.points[0].positions[2] = 0.0; // rad;
-	trajectory.points[0].positions[3] = 0.0; // rad;
-	trajectory.points[0].positions[4] = 0.0; // rad;
-
-	trajectory.points[0].time_from_start = ros::Duration(SEC_PER_TRAJ_POINT);
-
+    // Create trajectory with x points
+    trajectory.points.resize(TRAJ_POINTS);
+    for (std::size_t i = 0; i < TRAJ_POINTS; ++i)
+    {
+      trajectory.points[i].positions.resize(joint_names.size());
+      // for each joint
+      for (std::size_t j = 0; j < joint_names.size(); ++j)
+      {
+        trajectory.points[i].positions[j] = dRand(MIN_JOINT_VALUE, MAX_JOINT_VALUE);
+        trajectory.points[i].time_from_start = ros::Duration(i * SEC_PER_TRAJ_POINT);
+      }
+    }
 
     return trajectory;
+  }
+
+  /** \brief Get random number */
+  double dRand(double dMin, double dMax)
+  {
+    double d = (double)rand() / RAND_MAX;
+    return dMin + d * (dMax - dMin);
   }
 
 private:
